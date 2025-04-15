@@ -47,7 +47,7 @@ Welcome to the **CommerceCore API** — a production-ready, modular, and scalabl
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-backend-repo.git
+git clone https://github.com/bigjohncodes/CommerceCore.git
 cd your-backend-repo
 
 # Install dependencies
