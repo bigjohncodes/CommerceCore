@@ -1,4 +1,3 @@
-Here’s a refined version of your README with a more polished name and clearer formatting. I've renamed the project to **"CommerceCore API"** — a clean, professional name suitable for a scalable e-commerce backend. Let me know if you'd like a different name!
 
 ---
 
