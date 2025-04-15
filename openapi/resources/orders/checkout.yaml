@@ -1,0 +1,15 @@
+post:
+    tags:
+        - orders
+    summary: Checkout
+    description:
+    operationId: orders_checkout_post
+    security:
+        - BearerAuth: []
+    responses:
+        "200":
+            description:
+        "400":
+            description:
+        "422":
+            description: Sai các trường thông tin

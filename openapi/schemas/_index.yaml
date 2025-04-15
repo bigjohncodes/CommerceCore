@@ -1,0 +1,30 @@
+User:
+    $ref: "./User.yaml"
+RegisterBody:
+    $ref: "./RegisterBody.yaml"
+LoginBody:
+    $ref: "./LoginBody.yaml"
+LogoutBody:
+    $ref: "./LogoutBody.yaml"
+ApiResponse:
+    $ref: "./ApiResponse.yaml"
+FailedValidation:
+    $ref: "./FailedValidation.yaml"
+SuccessAuthenticate:
+    $ref: "./SuccessAuthenticate.yaml"
+CreateProductDTO:
+    $ref: "./CreateProductDTO.yaml"
+AttributeDTO:
+    $ref: "./AttributeDTO.yaml"
+CreateVariantDTO:
+    $ref: "./CreateVariantDTO.yaml"
+CreateOptionDTO:
+    $ref: "./CreateOptionDTO.yaml"
+CreateOptionValueDTO:
+    $ref: "./CreateOptionValueDTO.yaml"
+ProductDimensionDTO:
+    $ref: "./ProductDimensionDTO.yaml"
+CartDTO:
+    $ref: "./CartDTO.yaml"
+CartItemDTO:
+    $ref: "./CartItemDTO.yaml"

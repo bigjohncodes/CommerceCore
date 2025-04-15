@@ -1,0 +1,157 @@
+openapi: 3.0.3
+info:
+    title: Swagger Shopee - OpenAPI 3.0
+    description: |-
+
+    termsOfService: http://swagger.io/terms/
+    contact:
+        email: apiteam@swagger.io
+    license:
+        name: Apache 2.0
+        url: http://www.apache.org/licenses/LICENSE-2.0.html
+    version: 1.0.11
+externalDocs:
+    description: Find out more about Swagger
+    url: http://swagger.io
+servers:
+    - url: https://shopee-clone-be.onrender.com/api/v1
+    - url: http://localhost:{port}/api/v1
+      variables:
+        port:
+            default: '3000'
+tags:
+    - name: auth
+      description: Xác minh và xác thực
+    - name: users
+      description: Người dùng
+    - name: shop
+      description: Cửa hàng
+    - name: products
+      description: Sản phẩm
+    - name: carts
+      description: Giỏ hàng
+    - name: orders
+      description: Đơn hàng 
+    - name: category
+      description: Danh mục
+    - name: addresses
+      description: Địa chỉ
+    - name: shippings
+      description: Giao hàng
+    - name: payments
+      description: Thanh toan
+paths:
+    #   AUTH ROUTES
+    /auth/login:
+        $ref: "./resources/auth/login.yaml"
+    /auth/logout:
+        $ref: "./resources/auth/logout.yaml"
+    /auth/register:
+        $ref: "./resources/auth/register.yaml"
+    /auth/refresh-token:
+        $ref: "./resources/auth/refreshToken.yaml"
+    /auth/verify-email:
+        $ref: "./resources/auth/verifyEmail.yaml"
+    /auth/resend-verify-email:
+        $ref: "./resources/auth/resendVerifyEmail.yaml"
+    /auth/forgot-password:
+        $ref: "./resources/auth/forgotPassword.yaml"
+    /auth/verify-password:
+        $ref: "./resources/auth/verifyPassword.yaml"
+    /auth/resend-verify-password:
+        $ref: "./resources/auth/resendVerifyPassword.yaml"
+    /auth/reset-password:
+        $ref: "./resources/auth/resetPassword.yaml"
+
+    #   USERS ROUTES
+    /users/profile:
+        $ref: "./resources/users/profile.yaml"
+    /users/profile/all:
+        $ref: "./resources/users/profile_all.yaml"
+    /users/profile/{user_id}:
+        $ref: "./resources/users/profile_user_id.yaml"
+    /users/update-profile:
+        $ref: "./resources/users/update_profile.yaml"
+    /users/upload-avatar:
+        $ref: "./resources/users/upload_avatar.yaml"
+    /users/update-default-address:
+        $ref: "./resources/users/updateDefaultAddress.yaml"
+
+    #   SHOPS ROUTES
+    /shops:
+        $ref: "./resources/shops/getShopInfo.yaml"
+    /shops/{shop_id}:
+        $ref: "./resources/shops/getShopInfoById.yaml"
+    /shops/register:
+        $ref: "./resources/shops/register.yaml"
+
+    #   PRODUCTS ROUTES
+    /products/upload-product-images:
+        $ref: "./resources/product/uploadProductImages.yaml"
+    /products/create-new-product:
+        $ref: "./resources/product/createProduct.yaml"
+    /products/search-by-cate:
+        $ref: "./resources/product/searchByCate.yaml"
+    /products/search-by-keyword:
+        $ref: "./resources/product/searchByKeyword.yaml"
+    /products/all:
+        $ref: "./resources/product/getProductAll.yaml"
+    /products/{id}:
+        $ref: "./resources/product/getProduct.yaml"
+
+    #   CARTS ROUTES
+    /carts/get-my-cart:
+        $ref: "./resources/carts/getMyCart.yaml"
+    /carts/add-or-update-item:
+        $ref: "./resources/carts/addItem.yaml"
+    /carts/remove-item:
+        $ref: "./resources/carts/removeItem.yaml"
+
+    #   ORDERS ROUTES
+    /orders/checkout/{session_checkout_id}:
+        $ref: "./resources/orders/checkoutGet.yaml"
+    /orders/checkout:
+        $ref: "./resources/orders/checkout.yaml"    
+    /orders/update-order-info/{session_checkout_id}:
+        $ref: "./resources/orders/updateOrder.yaml"
+    /orders/place-order/{session_checkout_id}:
+        $ref: "./resources/orders/placeOrder.yaml"
+    /orders/get-user-orders:
+        $ref: "./resources/orders/getUserOrders.yaml"
+    /orders/{order_id}:
+        $ref: "./resources/orders/getOrder.yaml"
+
+    #   CATEGORIES ROUTES
+    /categories/get-category-tree:
+        $ref: "./resources/cate/getCategoryTree.yaml"
+
+    #   ADDRESSES ROUTES
+    /addresses/get-address/{id}:
+        $ref: "./resources/addresses/getAddress.yaml"
+    /addresses/get-user-addresses:
+        $ref: "./resources/addresses/getUserAddresses.yaml"
+    /addresses/create-user-address:
+        $ref: "./resources/addresses/createUserAddress.yaml"
+    /addresses/get-all-cities:
+        $ref: "./resources/addresses/getAllCities.yaml"
+    /addresses/get-all-districts/{city_code}:
+        $ref: "./resources/addresses/getAllDistricts.yaml"
+    /addresses/get-all-wards/{district_code}:
+        $ref: "./resources/addresses/getAllWards.yaml"
+
+    #   SHIPPINGS ROUTES
+    /shippings/get-shipping-channels:
+        $ref: "./resources/shippings/getShippingChannel.yaml"
+    /shippings/couting-shipping-fees:
+        $ref: "./resources/shippings/coutingShippingFee.yaml"
+        
+    #   PAYMENTS ROUTES
+    /payments/get-all-methods:
+        $ref: "./resources/payments/getMethods.yaml"
+
+components:
+    securitySchemes:
+        BearerAuth:
+            type: http
+            scheme: bearer
+            bearerFormat: JWT
