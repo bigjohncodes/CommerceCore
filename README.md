@@ -28,25 +28,7 @@ Welcome to the **CommerceCore API** — a production-ready, modular, and scalabl
 - **Frontend App**: [CommerceCore Frontend](https://shopee-reactjs-zeta.vercel.app/)  
   (by [ductaip](https://github.com/CNTT-UTH/Shopee-Clone-FE))
 
----
 
-## 🧭 Project Structure
-
-```
-/src
-├── config/        # Environment and logger setup
-├── constants/     # Application-wide constants and enums
-├── controllers/   # Express route handlers
-├── dbs/           # Database initialization and config
-├── middlewares/   # Authentication, error handling, etc.
-├── models/        # TypeORM entities, DTOs
-├── repository/    # Data access abstraction layer
-├── routes/        # API route definitions
-├── services/      # Business logic layer (DI-powered)
-└── utils/         # Utility and helper functions
-```
-
----
 
 ## ⚙️ Tech Stack
 
